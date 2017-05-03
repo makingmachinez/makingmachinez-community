@@ -1,0 +1,34 @@
+doctype html
+html
+  head
+
+    = render 'layouts/meta'
+
+    link href="https://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet"
+    link[href="/css/makingmachinez.css?r" rel="stylesheet" type="text/css"]
+    script src="https://code.jquery.com/jquery-2.1.4.min.js"
+
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
+
+    script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+    javascript:
+      (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-8570723468408214",
+        enable_page_level_ads: true
+      });
+
+    = render 'layouts/gtm_setup'
+
+  body
+    = render 'layouts/gtm_body'
+
+    = render 'layouts/analytics'
+    = render 'layouts/header'
+    section.contents
+      .container
+        = render 'layouts/ad-header'
+        = yield
+        = render 'layouts/adsense'
+        = render 'layouts/comment'
+        = render 'layouts/footer'

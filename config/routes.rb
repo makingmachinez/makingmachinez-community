@@ -1,3 +1,6 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  get '/community', to: 'community#view', as: 'community'
+  put '/community', to: 'community#put', as: 'put_community'
+
 end
